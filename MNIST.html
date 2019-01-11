@@ -136,7 +136,8 @@
                 canvas.addEventListener('touchend', sketchpad_touchEnd, false);
                 canvas.addEventListener('touchmove', sketchpad_touchMove, false);
             }
-            model = await tf.loadModel('model.json');
+            import * as tf from '@tensorflow/tfjs';
+            const model = await tf.loadModel('model.json');
         }
         function predict() {
             const imageData = ctx.getImageData(0, 0, 140, 140);

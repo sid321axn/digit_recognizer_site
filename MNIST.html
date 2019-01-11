@@ -142,7 +142,7 @@
               model = undefined;
   
   // load the model using a HTTPS request (where you have stored your model files)
-              model = await tf.loadModel("model.json");
+              model = await tf.loadModel('model.json');
   
               console.log("model loaded..");
 
@@ -227,7 +227,7 @@
         <h4 style="margin-left: 10px;">Draw a number in the left-hand box</h4>
         <div class="leftside">
             <canvas id="sketchpad" height="140" width="140"></canvas>
-            <input type="submit" value="Predict" id="predictbutton" onclick="predict();">
+            <input type="submit" value="Predict" id="predictbutton" onclick="predict(this.id);">
             <input type="submit" value="Clear" id="clearbutton" onclick="clearCanvas(canvas,ctx);">
         </div>
         <div id="rightside" class="rightside">

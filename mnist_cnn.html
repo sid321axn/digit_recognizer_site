@@ -153,6 +153,23 @@
 
 
         // Set-up the canvas and add our event handlers after the page has loaded
+        
+        async function loadModel() {
+              console.log("model loading..");
+
+                // clear the model variable
+                  model = undefined;
+  
+            // load the model using a HTTPS request (where you have stored your model files)
+             model = await tf.loadModel("https://github.com/sid321axn/digit_recognizer_site/tree/master/models/model.json");
+  
+               console.log("model loaded..");
+                        }
+
+
+        
+        
+        
         async function init() {
             // Get the specific canvas element from the HTML document
             canvas = document.getElementById('sketchpad');
@@ -173,7 +190,7 @@
                 canvas.addEventListener('touchend', sketchpad_touchEnd, false);
                 canvas.addEventListener('touchmove', sketchpad_touchMove, false);
             }
-            model = await tf.loadModel('model.json');
+            loadModel();
         }
 
         function predict() {

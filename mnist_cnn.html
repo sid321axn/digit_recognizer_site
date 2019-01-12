@@ -178,7 +178,7 @@
 
         function predict() {
             const imageData = ctx.getImageData(0, 0, 140, 140);
-            model = await tf.loadModel('model.json');
+            //model = await tf.loadModel('model.json');
             //convert to tensor 
             var tfImg = tf.fromPixels(imageData, 1);
             var smalImg = tf.image.resizeBilinear(tfImg, [28, 28]);

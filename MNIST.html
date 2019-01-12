@@ -120,6 +120,9 @@
         }
         // Set-up the canvas and add our event handlers after the page has loaded
         async function init() {
+              model = await tf.loadModel('model.json');
+  
+              console.log("model loaded..");
             // Get the specific canvas element from the HTML document
             canvas = document.getElementById('sketchpad');
             // If the browser supports the canvas tag, get the 2d drawing context for this canvas
@@ -138,13 +141,10 @@
             }
              // model = await tf.loadModel('model.json');
 
-            // clear the model variable
-              model = undefined;
+            
   
   // load the model using a HTTPS request (where you have stored your model files)
-              model = await tf.loadModel('model.json');
-  
-              console.log("model loaded..");
+              
 
         }
         function predict() {
